@@ -1,0 +1,11 @@
+1.Find the variant of the ls command (i.e. argument(s) to be used) to list contents of a folder including its hidden files, the variant of cp to copy folder and the command to rename a file.
+
+
+Solution :
+
+Use ls -a to list contents of folder including its hidden files
+
+cp -r is used to copy folder
+
+use mv command to rename files
+example, mv ilhan.text shoie.txt

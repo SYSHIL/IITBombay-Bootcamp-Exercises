@@ -1,0 +1,50 @@
+In this question, we will understand the hardware configuration of your working machine using the /proc filesystem.
+
+1)Run command more /proc/cpuinfo and explain the following terms: processor and cores. Use the command lscpu to verify your definitions.
+
+processor -> gives us the number of processing units our system has, numbering is indexed from 0
+cores -> number of cores present
+
+
+2)How many CPU sockets, cores, and processors does your machine have?
+
+My system has 1 CPU socket which means one physical processor
+Each socket has 4 cores and each core has 2 threads running which means we have 8 CPUs
+
+3)What is the frequency of each processor?
+
+Processor frequency(in MHz)
+0		900
+1 		800
+2		1300
+3		800
+4		1000
+5		2800
+6		1075
+7		800
+
+4)How much memory does your machine have?
+
+cat /proc/meminfo reports amount of available and used memory
+memTotal tells us we have 8056088 kB of total memory
+
+5)How much of it is free and available? What is the difference between them?
+
+In our case it is 5678508 kB of Available memory and 3370804 kB of free memory
+Available memory is an estimation of how much memory is available for starting new applications, without swapping
+Free memory is unused memory ie free = total-used-cache
+
+6)What is the total number of user-level processes in the system?
+
+running ps -e | wc -l tells we have 326 user level processes running in the system
+
+7)What is the total number of number of forks since the boot in the system ?
+
+This can be found out using either cat /proc/stat or vmstat -f 
+we have a total number of 8224 forks running on our system
+
+
+8)How many context switches has the system performed since bootup?
+
+I have ran the vmstat command with a 1 second interval for this,
+In the cs column shown in the vmstat output we get the total number of context switches per second
