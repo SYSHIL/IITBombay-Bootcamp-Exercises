@@ -1,0 +1,19 @@
+3)In this question, we will understand how to monitor the status of a running process using the top command. Compile the program cpu.c given to you and execute it in the bash or any other shell of your choice as follows.
+
+gcc --version
+# If gcc is not installed then run :- sudo apt-get install gcc
+gcc cpu.c -o cpu
+./cpu
+This program runs in an infinite loop without terminating. Now open another terminal, run the top command and answer the following questions about the cpu process.
+
+What is the PID of the process running the cpu command?
+
+PID of process is 6588
+	
+How much CPU and memory does this process consume?
+
+Process uses 98% of the CPU whereas 0.0% of Memory (MEM)
+	
+What is the current state of the process? For example, is it running or in a blocked state or a zombie state?
+	
+Currently the process in running state
